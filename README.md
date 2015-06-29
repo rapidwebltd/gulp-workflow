@@ -15,7 +15,7 @@ If you receive a `Permission denied` error, you need to make the script executab
 
 ##Commands
 
-`Gulp watch`
+`gulp watch`
 
 (Keeps an eye on your Bootstrap and LESS files by runs Bootlint and Lessc upon file changes)
 
