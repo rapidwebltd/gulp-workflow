@@ -9,7 +9,9 @@ To get the gulp-workflow install script, `cd` to your project's directory and ru
 `wget https://raw.githubusercontent.com/rapidwebltd/gulp-workflow/master/INSTALL.sh`
 
 #Usage
-Run the ./INSTALL.sh script from your Ubuntu machine. It should be saved inside the working project's root directory.
+Run the `./INSTALL.sh` script from your Ubuntu machine. It should be saved inside the working project's root directory.
+
+If you receive a `Permission denied` error, you need to make the script executable with `chmod +x INSTALL.sh`.
 
 ##Commands
 
