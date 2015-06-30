@@ -46,6 +46,9 @@ if ask "WARNING: This script is currently ONLY designed for Ubuntu 14.04) Are yo
 		echo "Installing ${INSTALL[@]}...";
 		sudo apt-get install ${INSTALL[@]} -y;
 	fi
+	if ! type -P node > /dev/null; then
+		sudo ln -s /usr/bin/nodejs /usr/bin/node
+	fi
 	echo "Installed! Moving on...";
 
 	#NPM modules installation...
