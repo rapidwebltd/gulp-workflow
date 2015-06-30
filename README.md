@@ -2,12 +2,20 @@
 
 This repository is for easily deploying our Gulp workflow. Currently, we only have one command available but aim to have a command for each step of the web development timeline. 
 
+##Download
+
+To get the gulp-workflow install script, `cd` to your project's directory and run the following `wget` command.
+
+`wget https://raw.githubusercontent.com/rapidwebltd/gulp-workflow/master/INSTALL.sh`
+
 #Usage
-Run the ./INSTALL.sh script from your Ubuntu machine. It should be saved inside the working project's root directory.
+Run the `./INSTALL.sh` script from your Ubuntu machine. It should be saved inside the working project's root directory.
+
+If you receive a `Permission denied` error, you need to make the script executable with `chmod +x INSTALL.sh`.
 
 ##Commands
 
-`Gulp watch`
+`gulp watch`
 
 (Keeps an eye on your Bootstrap and LESS files by runs Bootlint and Lessc upon file changes)
 
