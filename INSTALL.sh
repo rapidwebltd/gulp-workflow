@@ -50,10 +50,12 @@ if ask "WARNING: This script is currently ONLY designed for Ubuntu 14.04) Are yo
 		sudo ln -s /usr/bin/nodejs /usr/bin/node
 	fi
 	echo "Installed! Moving on...";
-
 	#NPM modules installation...
-	echo "Installing Gulp globally..."
-	sudo npm install --global gulp 
+	if ! type -P gulp > /dev/null; then
+		echo "Installing Gulp globally..."
+		sudo npm install --global gulp 
+	fi
+
 	#clear
 	echo "Installing basic gulp tasks..."
 	npm install require-dir 
