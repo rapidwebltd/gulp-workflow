@@ -6,7 +6,7 @@ This repository is for easily deploying our Gulp workflow. Currently, we only ha
 
 To get the gulp-workflow install script, `cd` to your project's directory and run the following `wget` command.
 
-`wget https://raw.githubusercontent.com/rapidwebltd/gulp-workflow/master/INSTALL.sh`
+`wget -N https://raw.githubusercontent.com/rapidwebltd/gulp-workflow/master/INSTALL.sh`
 
 #Usage
 Run the `./INSTALL.sh` script from your Ubuntu machine. It should be saved inside the working project's root directory.
