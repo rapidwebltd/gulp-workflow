@@ -51,10 +51,8 @@ if ask "WARNING: This script is currently ONLY designed for Ubuntu 14.04) Are yo
 	fi
 	echo "Installed! Moving on...";
 	#NPM modules installation...
-	if ! type -P gulp > /dev/null; then
-		echo "Installing Gulp globally..."
-		sudo npm install --global gulp 
-	fi
+	echo "Installing Gulp globally..."
+	sudo npm install --global gulp 
 
 	#clear
 	echo "Installing basic gulp tasks..."
