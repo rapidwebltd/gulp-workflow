@@ -150,7 +150,9 @@ gulp.task('watch', function() {
 	});
 });
 EOF
-	echo "node_modules/" >> ".git_ignore"
+	echo "node_modules/
+gulp-tasks/
+INSTALL.sh" >> ".gitignore"
 	echo "...Done! Go to https://github.com/rapidwebltd to keep up to date with the latest news and updates!"
 	echo "Run 'gulp watch' to start watching your files for changes and have fun!! :)"
 	
