@@ -39,7 +39,5 @@ MIT
 ##Todo: 
 
 * Initial JSHint support (In Progress)
-* OSX support
-* Redhat/Fedora support
 * Further error catching
 
