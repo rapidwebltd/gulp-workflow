@@ -30,9 +30,10 @@ ask() {
  
     done
 }
+installGulp () {
+	OS=$1;
 
-if ask "WARNING: This script is currently ONLY designed for Ubuntu 14.04) Are you sure you wish to proceed?" Y; then
-    INSTALL=()
+	INSTALL=()
     echo "Checking Nodejs & NPM are installed..."
     #Check to see if 'nodejs' is installed
     if ! type -P nodejs > /dev/null; then
@@ -42,14 +43,33 @@ if ask "WARNING: This script is currently ONLY designed for Ubuntu 14.04) Are yo
 	if ! type -P npm > /dev/null; then
     	INSTALL+=('npm ');	   
 	fi
-	if [ ${#INSTALL[@]} -gt 0 ]; then
-		echo "Installing ${INSTALL[@]}...";
-		sudo apt-get install ${INSTALL[@]} -y;
+
+	if [[ $OS=="osx" ]]; then
+		if [ ${#INSTALL[@]} -gt 0 ]; then
+			echo "Installing ${INSTALL[@]}...";
+			brew install ${INSTALL[@]} -y;
+		fi
+	elif [[ $OS=="fedora" ]]; then
+		if [ ${#INSTALL[@]} -gt 0 ]; then
+			echo "Installing ${INSTALL[@]}...";
+			sudo yum install ${INSTALL[@]} -y;
+		fi
+	elif [[ $OS=="ubuntu" ]]; then
+		if [ ${#INSTALL[@]} -gt 0 ]; then
+			echo "Installing ${INSTALL[@]}...";
+			sudo apt-get install ${INSTALL[@]} -y;
+		fi
 	fi
+
 	if ! type -P node > /dev/null; then
 		sudo ln -s /usr/bin/nodejs /usr/bin/node
 	fi
+
 	echo "Installed! Moving on...";
+	installGulpTasks
+}
+
+installGulpTasks () {
 	#NPM modules installation...
 	echo "Installing Gulp globally..."
 	sudo npm install --global gulp 
@@ -156,9 +176,16 @@ gulpfile.js
 INSTALL.sh" >> ".gitignore"
 	echo "...Done! Go to https://github.com/rapidwebltd to keep up to date with the latest news and updates!"
 	echo "Run 'gulp watch' to start watching your files for changes and have fun!! :)"
-	
-
-else
-    echo "Error: User aborted installation... Exiting..."
+}
+#OS Detect
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	installGulp "osx"
+elif [[ "$OSTYPE" == "linux-gnu" ]]; then
+	if [ -f /etc/redhat-release ]; then
+	  installGulp "fedora";
+	elif [ -f /etc/lsb-release ]; then
+	  installGulp "ubuntu";
+	fi
 fi
-
+   
+	
