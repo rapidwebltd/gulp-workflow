@@ -44,17 +44,17 @@ installGulp () {
     	INSTALL+=('npm ');	   
 	fi
 
-	if [[ $OS=="osx" ]]; then
+	if [[ $OS == "osx" ]]; then
 		if [ ${#INSTALL[@]} -gt 0 ]; then
 			echo "Installing ${INSTALL[@]}...";
 			brew install ${INSTALL[@]} -y;
 		fi
-	elif [[ $OS=="fedora" ]]; then
+	elif [[ $OS == "fedora" ]]; then
 		if [ ${#INSTALL[@]} -gt 0 ]; then
 			echo "Installing ${INSTALL[@]}...";
 			sudo yum install ${INSTALL[@]} -y;
 		fi
-	elif [[ $OS=="ubuntu" ]]; then
+	elif [[ $OS == "ubuntu" ]]; then
 		if [ ${#INSTALL[@]} -gt 0 ]; then
 			echo "Installing ${INSTALL[@]}...";
 			sudo apt-get install ${INSTALL[@]} -y;
