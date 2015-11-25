@@ -1,5 +1,6 @@
 #Overview
-*Warning: This is now been replaced by [our project boilerplate](https://github.com/rapidwebltd/rapidweb-project-boilerplate). This project will be deprecated. If you wish to use this script, please fork it and maintain it to fit your needs.*
+**Warning: This is now been replaced by [our project boilerplate](https://github.com/rapidwebltd/rapidweb-project-boilerplate). This project will be deprecated. If you wish to use this script, please fork it and maintain it to fit your needs.**
+
 This repository is for easily deploying our Gulp workflow. Currently, we only have one command available but aim to have a command for each step of the web development timeline. 
 
 ##Download
